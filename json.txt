@@ -1,0 +1,24 @@
+[
+{
+    "id": 1,
+    "name": "Tilde",
+    "price": 12.50,
+    "tags": ["room", "blue"],
+    "address": [{"home":"17 Rto September 5"}, {"work":"Sol 25 %12 and"}],
+    "sex":{
+    	"hombre": 4,
+   		 "mujer": {"ojos":"verdes","boca":"mid"}
+   		}
+},
+{
+    "id": 2,
+    "name": "Ariel",
+    "price": 17.50,
+    "tags": ["home", "green"],
+    "address": [{"home":"401 nw"}, {"work":"Coral"}],
+    "sex":{
+    	"hombre": 4,
+   		 "mujer": {"ojos":"verdes","boca":"mid"}
+   		}
+}
+]
