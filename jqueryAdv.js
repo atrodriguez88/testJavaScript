@@ -1,23 +1,49 @@
 $(document).ready(function() {
     var fix = $("#fix");
-    $("#s4").css('opacity', 0);
+
+    var windowHeight = $(window).height();
+    var windowScrollTop = $(window).scrollTop();
+    var windowScrollBottom = windowHeight + windowScrollTop;
+
+    $.fn.scrollAppeart = function(pos, time) {
+
+        return this.each(function() {
+
+            var offsetS4 = $(this).offset();
+            var offsetS4Top = offsetS4.top;
+
+            if (!$(this).hasClass('hidden')) {
+
+                if (pos == "right") {
+                    $(this).css({
+                        'opacity': 0,
+                        'margin-right': '700px',
+                    });
+                } else {
+                    $(this).css({
+                        'opacity': 0,
+                        'margin-right': '-700px'
+                    });
+                }
+                $(this).addClass('hidden');
+            }
+            if (!$(this).hasClass('anima')) {
+                if (offsetS4Top < windowScrollBottom) {
+                    $(this).animate({ "opacity": 1, "margin": 0 }, time).addClass('anima');
+                }
+            }
+        });
+    }
+
     $(window).scroll(function() {
 
-        var windowHeight = $(window).height();
-        var windowScrollTop = $(window).scrollTop();
-        var windowScrollBottom = windowHeight + windowScrollTop;
+        windowHeight = $(window).height();
+        windowScrollTop = $(window).scrollTop();
+        windowScrollBottom = windowHeight + windowScrollTop;
         //document.getElementById("fix").innerHTML = $(window).scrollTop();
-        //fix.html(windowScrollBottom);
-
-        var offsetS4 = $("#s4").offset();
-        var offsetS4Top = offsetS4.top;
-
-        fix.html(offsetS4Top);
-
-        if (!$("#s4").hasClass('animation-complete')) {
-            if (offsetS4Top < windowScrollBottom) {
-                $("#s4").animate({ "opacity": 1 }, 3000).addClass('animation-complete');
-            }
-        }
+        fix.html(windowScrollBottom);
+        $("#s4").scrollAppeart("right", 1000);
+        $("#s5").scrollAppeart("left", 1000);
+        $("#s3 img").scrollAppeart("right", 1000);
     });
 });
