@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	// Start Scroll
+    // Start Scroll
     var fix = $("#fix");
 
     var windowHeight = $(window).height();
@@ -53,7 +53,21 @@ $(document).ready(function() {
     var btn = $(".btn-menu span");
     var list = $(".main-menu ul");
     $(btn).click(function(event) {
-    	$(list).slideToggle('fast');
+        $(list).slideToggle('fast');
     });
     //End Menu
 });
+
+var obj = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function () {
+        return this.firstName + " " + this.lastName;
+    },
+    edad:function(){
+    	this.day = 7;
+    	this.mes = 11;
+    	//return (this.day + this.mes);
+    }
+}
+obj.fullName();
