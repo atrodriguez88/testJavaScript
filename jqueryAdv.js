@@ -56,18 +56,10 @@ $(document).ready(function() {
         $(list).slideToggle('fast');
     });
     //End Menu
-});
 
-var obj = {
-    firstName:"John",
-    lastName: "Doe",
-    fullName: function () {
-        return this.firstName + " " + this.lastName;
-    },
-    edad:function(){
-    	this.day = 7;
-    	this.mes = 11;
-    	//return (this.day + this.mes);
-    }
-}
-obj.fullName();
+    //Dynamically load images
+    $("#s1, #s2").each(function(i) {
+    	$(this).append('<strong>Thank '+ (i + 1) + '</strong>');
+    	$(this).prepend("<img  src='img/"+(i + 1)+".png' width='43' height = '75'/>");
+    });
+});

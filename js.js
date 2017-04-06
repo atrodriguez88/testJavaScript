@@ -15,7 +15,7 @@ var edad = new obj.edad();
 console.log("My name is " + obj.fullName() + " and my bithday is in " + edad.mes + '/' + edad.day);
 
 // Other Example with Jquery
-
+function change () {
 var begin = (function($) {
     var resp = {
         init: function() {
@@ -39,3 +39,4 @@ var begin = (function($) {
 })($);
 begin.init();
 begin.setListening();
+}
