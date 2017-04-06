@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	// Start Scroll
     var fix = $("#fix");
 
     var windowHeight = $(window).height();
@@ -46,4 +47,13 @@ $(document).ready(function() {
         $("#s5").scrollAppeart("left", 1000);
         $("#s3 img").scrollAppeart("right", 1000);
     });
+    //End Scroll
+
+    //Star Menu
+    var btn = $(".btn-menu span");
+    var list = $(".main-menu ul");
+    $(btn).click(function(event) {
+    	$(list).slideToggle('fast');
+    });
+    //End Menu
 });
