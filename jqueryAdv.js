@@ -59,7 +59,20 @@ $(document).ready(function() {
 
     //Dynamically load images
     $("#s1, #s2").each(function(i) {
-    	$(this).append('<strong>Thank '+ (i + 1) + '</strong>');
-    	$(this).prepend("<img  src='img/"+(i + 1)+".png' width='43' height = '75'/>");
+        $(this).append('<strong>Thank ' + (i + 1) + '</strong>');
+        $(this).prepend("<img  src='img/" + (i + 1) + ".png' width='43' height = '75'/>");
+    });
+
+    //Directionar 
+    $(".main-menu ul li a").click(function() {
+        var rel = $(this).attr('rel');
+        /*var top = $("#" + rel).offset().top;
+        alert(top);*/
+        $('html, body').animate({
+            scrollTop: $("#"+rel).offset().top
+        }, 900, function() {
+            //window.location.rel = top;
+        });
+
     });
 });
